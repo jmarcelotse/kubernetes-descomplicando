@@ -59,8 +59,10 @@ kubectl describe pod nginx
 kubernetes-descomplicando/
 ├── README.md
 ├── k8s/
-│   └── kind/
-│       └── kind-config.yaml
+│   ├── kind/
+│   │   └── kind-config.yaml
+│   └── pod/
+│       └── pod.yaml
 ├── *.md (documentação)
 └── .gitignore
 ```
