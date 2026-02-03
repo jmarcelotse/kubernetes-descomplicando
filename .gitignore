@@ -9,8 +9,8 @@
 .env
 .env.local
 
-# Arquivos gerados dinamicamente
-pod.yaml
+# Arquivos gerados dinamicamente (raiz)
+/pod.yaml
 
 # Configurações específicas do ambiente
 kubeconfig
