@@ -1,0 +1,45 @@
+# Arquivos temporários
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# Arquivos de configuração local
+.env
+.env.local
+
+# Arquivos gerados dinamicamente
+pod.yaml
+
+# Configurações específicas do ambiente
+kubeconfig
+*.kubeconfig
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Diretórios de cache
+.cache/
+.kubectl_cache/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos do editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Certificados e chaves
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Arquivos de secrets
+secrets/
+*.secret
