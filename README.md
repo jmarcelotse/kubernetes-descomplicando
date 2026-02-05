@@ -32,6 +32,17 @@ Guia completo e prático para aprender Kubernetes do básico ao avançado.
 - [Limitando Recursos CPU e Memória](limitando-recursos-cpu-memoria.md)
 - [Configurando Volume EmptyDir](configurando-volume-emptydir.md)
 
+### Deployments
+- [O que é Deployment](o-que-e-deployment.md)
+- [Diagramas de Deployment](diagramas-deployment.md)
+- [Primeiros Passos com Deployment](primeiros-passos-deployment.md)
+- [Criando Deployment via Manifesto](criando-deployment-manifesto.md)
+- [Diagramas: Deployment via Manifesto](diagramas-deployment-manifesto.md)
+- [Criando Múltiplos Deployments](criando-multiplos-deployments.md)
+- [Diagramas: Múltiplos Deployments](diagramas-multiplos-deployments.md)
+- [Atualizando Deployments](atualizando-deployment.md)
+- [Diagramas: Atualização de Deployments](diagramas-atualizacao-deployment.md)
+
 ## 🚀 Início Rápido
 
 ### Pré-requisitos
@@ -67,14 +78,24 @@ kubernetes-descomplicando/
 ├── k8s/
 │   ├── kind/
 │   │   └── kind-config.yaml
-│   └── pod/
-│       ├── pod.yaml                    # Pod nginx básico
-│       ├── pod1.yaml                   # Pod multi-container (nginx + apache)
-│       ├── pod2.yaml                   # Pod ubuntu com limitação de recursos
-│       ├── pod3.yaml                   # Pod ubuntu com volume EmptyDir
-│       ├── multi-container-pod.yaml    # Pod com nginx + log collector
-│       ├── resource-demo.yaml          # Pod com nginx + stress test
-│       └── emptydir-demo.yaml          # Pod com volume EmptyDir compartilhado
+│   ├── pod/
+│   │   ├── pod.yaml                    # Pod nginx básico
+│   │   ├── pod1.yaml                   # Pod multi-container (nginx + apache)
+│   │   ├── pod2.yaml                   # Pod ubuntu com limitação de recursos
+│   │   ├── pod3.yaml                   # Pod ubuntu com volume EmptyDir
+│   │   ├── multi-container-pod.yaml    # Pod com nginx + log collector
+│   │   ├── resource-demo.yaml          # Pod com nginx + stress test
+│   │   └── emptydir-demo.yaml          # Pod com volume EmptyDir compartilhado
+│   └── deployment/
+│       ├── deployment.yaml             # Deployment nginx básico
+│       ├── web-app-deployment.yaml     # Deployment com recursos e health checks
+│       ├── rolling-update-demo.yaml    # Deployment com estratégia rolling update
+│       ├── primeiro-deployment.yaml    # Primeiro deployment via manifesto
+│       ├── deployment-completo.yaml    # Deployment com todas as configurações
+│       ├── api-backend.yaml            # Deployment de API backend
+│       ├── frontend-web.yaml           # Deployment frontend web
+│       ├── api-service.yaml            # Deployment API service
+│       └── database-postgres.yaml      # Deployment PostgreSQL
 ├── *.md (documentação)
 └── .gitignore
 ```
