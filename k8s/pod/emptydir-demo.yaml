@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: emptydir-demo
+  labels:
+    app: volume-demo
+spec:
+  containers:
+  - name: writer
+    image: busybox
+    command: ['sh', '-c']
+    args:
+    - |
+      while true; do
+        echo "$(date): Escrevendo dados..." >> /shared/data.log
+        echo "Writer container ativo" > /shared/status.txt
+        sleep 10
+      done
+    volumeMounts:
+    - name: shared-storage
+      mountPath: /shared
+      
+  - name: reader
+    image: busybox
+    command: ['sh', '-c']
+    args:
+    - |
+      while true; do
+        if [ -f /shared/data.log ]; then
+          echo "=== $(date) - Últimas 5 linhas ==="
+          tail -n 5 /shared/data.log
+        fi
+        if [ -f /shared/status.txt ]; then
+          echo "Status: $(cat /shared/status.txt)"
+        fi
+        echo "========================"
+        sleep 15
+      done
+    volumeMounts:
+    - name: shared-storage
+      mountPath: /shared
+      
+  volumes:
+  - name: shared-storage
+    emptyDir:
+      sizeLimit: 100Mi

@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: test-pod
-  name: test-pod
+  name: test-pod-2
 spec:
   containers:
   - image: nginx

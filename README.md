@@ -10,6 +10,7 @@ Guia completo e prático para aprender Kubernetes do básico ao avançado.
 - [O que é Container Runtime](o-que-e-container-runtime.md)
 - [O que é OCI](o-que-e-oci.md)
 - [O que é Kubernetes](o-que-e-kubernetes.md)
+- [O que é Pod](o-que-e-pod.md)
 
 ### Arquitetura
 - [Workers e Control Plane](workers-e-control-plane.md)
@@ -21,10 +22,15 @@ Guia completo e prático para aprender Kubernetes do básico ao avançado.
 - [Entendendo e Instalando kubectl](entendendo-instalando-kubectl.md)
 - [Primeiros Passos com kubectl](primeiros-passos-kubectl.md)
 - [Conhecendo YAML e kubectl dry-run](conhecendo-yaml-kubectl-dry-run.md)
+- [kubectl get e describe pods](kubectl-get-describe-pods.md)
+- [kubectl attach e kubectl exec](kubectl-attach-exec.md)
 
 ### Ambiente Prático
 - [Criando Primeiro Cluster com kind](criando-primeiro-cluster-kind.md)
 - [Introdução a Pods, Deployments e Services](introducao-pods-deployments-services.md)
+- [Pod Multi-Container](pod-multi-container.md)
+- [Limitando Recursos CPU e Memória](limitando-recursos-cpu-memoria.md)
+- [Configurando Volume EmptyDir](configurando-volume-emptydir.md)
 
 ## 🚀 Início Rápido
 
@@ -62,7 +68,13 @@ kubernetes-descomplicando/
 │   ├── kind/
 │   │   └── kind-config.yaml
 │   └── pod/
-│       └── pod.yaml
+│       ├── pod.yaml                    # Pod nginx básico
+│       ├── pod1.yaml                   # Pod multi-container (nginx + apache)
+│       ├── pod2.yaml                   # Pod ubuntu com limitação de recursos
+│       ├── pod3.yaml                   # Pod ubuntu com volume EmptyDir
+│       ├── multi-container-pod.yaml    # Pod com nginx + log collector
+│       ├── resource-demo.yaml          # Pod com nginx + stress test
+│       └── emptydir-demo.yaml          # Pod com volume EmptyDir compartilhado
 ├── *.md (documentação)
 └── .gitignore
 ```

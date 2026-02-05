@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: girus
+    service: webserver
+  name: girus
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    ports:
+    - containerPort: 80
+    resources: {}
+  - image: httpd
+    name: apache
+    ports:
+    - containerPort: 8080
+    env:
+    - name: HTTPD_PORT
+      value: "8080"
+    command: ["/bin/sh"]
+    args: ["-c", "sed -i 's/Listen 80/Listen 8080/' /usr/local/apache2/conf/httpd.conf && httpd-foreground"]
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
